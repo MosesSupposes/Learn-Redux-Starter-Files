@@ -7,7 +7,7 @@ const Photo = React.createClass({
         const { post, i, comments } = this.props
         return (
             <figure className="grid-figure">
-                <div class="grid-photo-wrap">
+                <div className="grid-photo-wrap">
                     <Link to={`/view/${post.code}`}>
                         <img src={post.display_src} 
                              alt={post.caption}
@@ -28,7 +28,7 @@ const Photo = React.createClass({
                 <figcaption>
                     <p>{post.caption}</p>
                     <div className="control-buttons">
-                        <button className="likes">
+                        <button onClick={this.props.increment.bind(null, i)} className="likes">
                             &hearts; {post.likes}
                         </button>
                         <Link to={`/view/${post.code}`} className="button">
